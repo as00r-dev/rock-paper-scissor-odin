@@ -13,7 +13,7 @@ on any browser or just go to this link to check live version:- https://as00r-dev
 
 ### Folder structure
 
-Here's a folder structure for a Pandoc document:
+Here's a folder structure:
 
 ```
 rock-paper-scissor-odin/     # Root directory.
