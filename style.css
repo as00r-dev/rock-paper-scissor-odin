@@ -31,6 +31,11 @@ img {
 	gap: 16px;
 }
 
+.blurred {
+	filter: blur(8px);
+	-webkit-filter: blur(8px);
+}
+
 .wrapper > div {
 	padding: 1.5%;
 }
@@ -65,4 +70,24 @@ img {
 
 .result {
 	text-align: center;
+}
+
+.game-result {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 99;
+	display: none;
+}
+
+.game-result.visible {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	align-items: center;
+	justify-content: center;
+	background: #121212;
+	opacity: 0.7;
 }

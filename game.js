@@ -54,11 +54,14 @@ function game(playerChoice, computerChoice) {
 	}
 	if (playerScore === 5 || computerScore === 5) {
 		if (playerScore > computerScore) {
-			RESULTS.textContent = "You Won!";
+			GAME_RESULT_TEXT.textContent = "You Won!";
 		} else {
-			RESULTS.textContent = "You Lost!";
+			GAME_RESULT_TEXT.textContent = "You Lost!";
 		}
-		resetScore();
+		GAME_RESULT.classList.add("visible");
+		SCORE_WRAPPER.classList.add("blurred");
+		RESULTS.classList.add("blurred");
+		BUTTONS_WRAPPER.classList.add("blurred");
 	}
 }
 
@@ -68,6 +71,10 @@ function resetScore() {
 	computerScore = 0;
 	PLAYER_SCORE.textContent = playerScore;
 	COMPUTER_SCORE.textContent = computerScore;
+	GAME_RESULT.classList.remove("visible");
+	SCORE_WRAPPER.classList.remove("blurred");
+	RESULTS.classList.remove("blurred");
+	BUTTONS_WRAPPER.classList.remove("blurred");
 }
 
 //Click Handler
@@ -90,6 +97,8 @@ const SCORE_WRAPPER = document.createElement("div");
 const PLAYER_SCORE = document.createElement("div");
 const COMPUTER_SCORE = document.createElement("div");
 const COMPUTER_CHOICE = document.createElement("p");
+const GAME_RESULT = document.createElement("div");
+const GAME_RESULT_TEXT = document.createElement("p");
 
 //Select Elements
 const WRAPPER = document.querySelector(".wrapper");
@@ -108,6 +117,7 @@ COMPUTER_SCORE.textContent = 0;
 ROCK_BUTTON.innerHTML = `<img id="rock" src="./assets/rock.png">`;
 PAPER_BUTTON.innerHTML = `<img id="paper" src="./assets/paper.png">`;
 SCISSOR_BUTTON.innerHTML = `<img id="scissor" src="./assets/scissor.png">`;
+GAME_START.textContent = "Restart!";
 BUTTONS_WRAPPER.classList.add("button-wrapper");
 BUTTONS_WRAPPER.appendChild(ROCK_BUTTON);
 BUTTONS_WRAPPER.appendChild(PAPER_BUTTON);
@@ -115,13 +125,18 @@ BUTTONS_WRAPPER.appendChild(SCISSOR_BUTTON);
 
 //For RESULT
 RESULTS.classList.add("result");
+GAME_RESULT.classList.add("game-result");
+GAME_RESULT.appendChild(GAME_RESULT_TEXT);
+GAME_RESULT.appendChild(GAME_START);
 
 //Append to WRAPPER
 WRAPPER.appendChild(SCORE_WRAPPER);
 WRAPPER.appendChild(BUTTONS_WRAPPER);
 WRAPPER.appendChild(RESULTS);
+WRAPPER.appendChild(GAME_RESULT);
 
 //Event Listeners
 ROCK_BUTTON.addEventListener("click", clickHandler);
 PAPER_BUTTON.addEventListener("click", clickHandler);
 SCISSOR_BUTTON.addEventListener("click", clickHandler);
+GAME_START.addEventListener("click", resetScore);
