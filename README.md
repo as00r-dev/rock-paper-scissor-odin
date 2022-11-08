@@ -2,7 +2,10 @@
 
 ## Description
 
-This was made as a supplementary project for The Odin Project.
+This was made as a supplementary project for The Odin Project. I
+understand that creating UI directly in JS file like this is not
+the best practice. I did it just to practice DOM manipulation and
+better grasp how React would benefit me.
 
 ## Usage
 
