@@ -29,11 +29,13 @@ img {
 }
 
 .wrapper {
-	background: #ffffff22;
-	width: clamp(250px, 500px, 50vw);
+	width: 100vw;
+	height: 100vh;
 	padding: 5%;
 	border-radius: 6px;
 	display: flex;
+	align-items: center;
+	justify-content: space-between;
 	flex-direction: column;
 	gap: 16px;
 }
@@ -50,6 +52,7 @@ img {
 .score {
 	display: flex;
 	justify-content: space-between;
+	width: 100%;
 }
 
 .button-wrapper {
@@ -105,4 +108,15 @@ img {
 	border-radius: 8px;
 	opacity: 1;
 	cursor: pointer;
+}
+
+.player,
+.computer {
+	width: clamp(50px, 100px, 200px);
+	height: clamp(50px, 100px, 200px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(255, 255, 255, 0.253);
+	border-radius: 8px;
 }

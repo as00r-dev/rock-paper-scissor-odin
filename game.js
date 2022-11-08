@@ -45,13 +45,13 @@ function game(playerChoice, computerChoice) {
 	if (resultCode[0] === 1) {
 		playerScore++;
 		PLAYER_SCORE.textContent = playerScore;
-		RESULTS.textContent = "Round Won!";
+		// RESULTS.textContent = "Round Won!";
 	} else if (resultCode[0] === 0) {
 		computerScore++;
 		COMPUTER_SCORE.textContent = computerScore;
-		RESULTS.textContent = "Round Lost";
+		// RESULTS.textContent = "Round Lost";
 	} else if (resultCode[0] === 2) {
-		RESULTS.textContent = "Draw!";
+		// RESULTS.textContent = "Draw!";
 	}
 	//check if someone's score is 5, then show modal
 	if (playerScore === 5 || computerScore === 5) {
@@ -62,7 +62,7 @@ function game(playerChoice, computerChoice) {
 		}
 		GAME_RESULT.classList.add("visible");
 		SCORE_WRAPPER.classList.add("blurred");
-		RESULTS.classList.add("blurred");
+		// RESULTS.classList.add("blurred");
 		BUTTONS_WRAPPER.classList.add("blurred");
 	}
 }
@@ -75,7 +75,7 @@ function resetScore() {
 	COMPUTER_SCORE.textContent = computerScore;
 	GAME_RESULT.classList.remove("visible");
 	SCORE_WRAPPER.classList.remove("blurred");
-	RESULTS.classList.remove("blurred");
+	// RESULTS.classList.remove("blurred");
 	BUTTONS_WRAPPER.classList.remove("blurred");
 }
 
@@ -92,7 +92,6 @@ let computerScore = 0;
 const ROCK_BUTTON = document.createElement("button");
 const PAPER_BUTTON = document.createElement("button");
 const SCISSOR_BUTTON = document.createElement("button");
-const RESULTS = document.createElement("div");
 const BUTTONS_WRAPPER = document.createElement("div");
 const GAME_START = document.createElement("button");
 const SCORE_WRAPPER = document.createElement("div");
@@ -126,7 +125,7 @@ BUTTONS_WRAPPER.appendChild(PAPER_BUTTON);
 BUTTONS_WRAPPER.appendChild(SCISSOR_BUTTON);
 
 //For RESULT
-RESULTS.classList.add("result");
+// RESULTS.classList.add("result");
 GAME_RESULT.classList.add("game-result");
 GAME_RESULT.appendChild(GAME_RESULT_TEXT);
 GAME_RESULT.appendChild(GAME_START);
@@ -134,7 +133,7 @@ GAME_RESULT.appendChild(GAME_START);
 //Append to WRAPPER
 WRAPPER.appendChild(SCORE_WRAPPER);
 WRAPPER.appendChild(BUTTONS_WRAPPER);
-WRAPPER.appendChild(RESULTS);
+// WRAPPER.appendChild(RESULTS);
 WRAPPER.appendChild(GAME_RESULT);
 
 //Event Listeners
