@@ -91,3 +91,11 @@ img {
 	background: #121212;
 	opacity: 0.7;
 }
+
+.game-result button {
+	border: 0;
+	padding: 12px 16px;
+	border-radius: 8px;
+	opacity: 1;
+	cursor: pointer;
+}
