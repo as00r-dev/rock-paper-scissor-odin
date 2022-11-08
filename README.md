@@ -32,7 +32,7 @@ using a random number generator and returns the choice as a `string`.
 a single round of RPS using `playerSelection` and `computerSelection`.
 This function returns an `Array[]` of length 2. First element of array
 is a number in inclusive range `0,1,2`. Where `0` means round lose,
-`1` means round won and `2` means round lost. The second element in array
+`1` means round won and `2` means draw. The second element in array
 is computer's choice for that round.
 
 `game(playerChoice, computerChoice)`: This function is the main function
