@@ -14,8 +14,8 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
 	playerSelection = `${playerSelection[0].toUpperCase()}${playerSelection.slice(
 		1
-	)}`;
-
+	)}`; // make first letter capital.
+	//returning an array where first element is code for who won and second is computer's choice
 	if (playerSelection === "Rock" && computerSelection === "Paper") {
 		return [0, computerSelection];
 	} else if (playerSelection === "Rock" && computerSelection === "Scissor") {
@@ -39,8 +39,9 @@ function playRound(playerSelection, computerSelection) {
 
 //main game logic
 function game(playerChoice, computerChoice) {
-	const resultCode = playRound(playerChoice, computerChoice);
+	const resultCode = playRound(playerChoice, computerChoice); //play one round
 	COMPUTER_CHOICE.textContent = resultCode[1];
+	//update score and show who won
 	if (resultCode[0] === 1) {
 		playerScore++;
 		PLAYER_SCORE.textContent = playerScore;
@@ -52,6 +53,7 @@ function game(playerChoice, computerChoice) {
 	} else if (resultCode[0] === 2) {
 		RESULTS.textContent = "Draw!";
 	}
+	//check if someone's score is 5, then show modal
 	if (playerScore === 5 || computerScore === 5) {
 		if (playerScore > computerScore) {
 			GAME_RESULT_TEXT.textContent = "You Won!";
