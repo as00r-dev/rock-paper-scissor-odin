@@ -17,37 +17,40 @@ function playRound(playerSelection, computerSelection) {
 	)}`;
 
 	if (playerSelection === "Rock" && computerSelection === "Paper") {
-		return 0;
+		return [0, computerSelection];
 	} else if (playerSelection === "Rock" && computerSelection === "Scissor") {
-		return 1;
+		return [1, computerSelection];
 	} else if (playerSelection === "Rock" && computerSelection === "Rock") {
-		return 2;
+		return [2, computerSelection];
 	} else if (playerSelection === "Paper" && computerSelection === "Paper") {
-		return 2;
+		return [2, computerSelection];
 	} else if (playerSelection === "Paper" && computerSelection === "Scissor") {
-		return 0;
+		return [0, computerSelection];
 	} else if (playerSelection === "Paper" && computerSelection === "Rock") {
-		return 1;
+		return [1, computerSelection];
 	} else if (playerSelection === "Scissor" && computerSelection === "Paper") {
-		return 1;
+		return [1, computerSelection];
 	} else if (playerSelection === "Scissor" && computerSelection === "Scissor") {
-		return 2;
+		return [2, computerSelection];
 	} else if (playerSelection === "Scissor" && computerSelection === "Rock") {
-		return 0;
+		return [0, computerSelection];
 	}
 }
 
 //main game logic
 function game(playerChoice, computerChoice) {
 	const resultCode = playRound(playerChoice, computerChoice);
-	if (resultCode === 1) {
+	COMPUTER_CHOICE.textContent = resultCode[1];
+	if (resultCode[0] === 1) {
 		playerScore++;
 		PLAYER_SCORE.textContent = playerScore;
 		RESULTS.textContent = "Round Won!";
-	} else if (resultCode === 2) {
+	} else if (resultCode[0] === 0) {
 		computerScore++;
 		COMPUTER_SCORE.textContent = computerScore;
 		RESULTS.textContent = "Round Lost";
+	} else if (resultCode[0] === 2) {
+		RESULTS.textContent = "Draw!";
 	}
 	if (playerScore === 5 || computerScore === 5) {
 		if (playerScore > computerScore) {
@@ -69,7 +72,7 @@ function resetScore() {
 
 //Click Handler
 function clickHandler(e) {
-	game(e.target.textContent, getComputerChoice());
+	game(e.target.id, getComputerChoice());
 }
 
 //Global game score counter
@@ -86,6 +89,7 @@ const GAME_START = document.createElement("button");
 const SCORE_WRAPPER = document.createElement("div");
 const PLAYER_SCORE = document.createElement("div");
 const COMPUTER_SCORE = document.createElement("div");
+const COMPUTER_CHOICE = document.createElement("p");
 
 //Select Elements
 const WRAPPER = document.querySelector(".wrapper");
@@ -93,6 +97,7 @@ const WRAPPER = document.querySelector(".wrapper");
 //For SCORE
 SCORE_WRAPPER.classList.add("score");
 SCORE_WRAPPER.appendChild(PLAYER_SCORE);
+SCORE_WRAPPER.appendChild(COMPUTER_CHOICE);
 SCORE_WRAPPER.appendChild(COMPUTER_SCORE);
 PLAYER_SCORE.classList.add("player");
 COMPUTER_SCORE.classList.add("computer");
@@ -100,9 +105,9 @@ PLAYER_SCORE.textContent = 0;
 COMPUTER_SCORE.textContent = 0;
 
 //For BUTTONS
-ROCK_BUTTON.textContent = "Rock";
-PAPER_BUTTON.textContent = "Paper";
-SCISSOR_BUTTON.textContent = "Scissor";
+ROCK_BUTTON.innerHTML = `<img id="rock" src="./assets/rock.png">`;
+PAPER_BUTTON.innerHTML = `<img id="paper" src="./assets/paper.png">`;
+SCISSOR_BUTTON.innerHTML = `<img id="scissor" src="./assets/scissor.png">`;
 BUTTONS_WRAPPER.classList.add("button-wrapper");
 BUTTONS_WRAPPER.appendChild(ROCK_BUTTON);
 BUTTONS_WRAPPER.appendChild(PAPER_BUTTON);

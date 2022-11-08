@@ -16,6 +16,11 @@ body {
 	color: white; /* just for dev, add color to elements when done */
 }
 
+img {
+	height: 75px;
+	width: 75px;
+}
+
 .wrapper {
 	background: #ffffff22;
 	width: clamp(250px, 500px, 50vw);
@@ -40,6 +45,22 @@ body {
 	justify-content: center;
 	align-items: center;
 	gap: 16px;
+}
+
+.button-wrapper > button {
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+.button-wrapper:hover > button {
+	opacity: 0.3;
+}
+
+.button-wrapper:hover > button:hover {
+	opacity: 1;
+	transform: scale(1.1);
 }
 
 .result {
