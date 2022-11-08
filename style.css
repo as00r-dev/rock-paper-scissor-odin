@@ -15,3 +15,33 @@ body {
 	background: #121212;
 	color: white; /* just for dev, add color to elements when done */
 }
+
+.wrapper {
+	background: #ffffff22;
+	width: clamp(250px, 500px, 50vw);
+	padding: 5%;
+	border-radius: 6px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.wrapper > div {
+	padding: 1.5%;
+}
+
+.score {
+	display: flex;
+	justify-content: space-between;
+}
+
+.button-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 16px;
+}
+
+.result {
+	text-align: center;
+}
