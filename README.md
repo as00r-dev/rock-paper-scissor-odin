@@ -9,7 +9,7 @@ This was made as a supplementary project for The Odin Project.
 ### Installing
 
 In order to play, just clone this repo, and run `index.html`
-on any browser or just go to this link :-
+on any browser or just go to this link to check live version:- https://as00r-dev.github.io/rock-paper-scissor-odin/
 
 ### Folder structure
 
