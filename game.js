@@ -116,9 +116,9 @@ PLAYER_SCORE.textContent = 0;
 COMPUTER_SCORE.textContent = 0;
 
 //For BUTTONS
-ROCK_BUTTON.innerHTML = `<img id="rock" src="./assets/rock.png">`;
-PAPER_BUTTON.innerHTML = `<img id="paper" src="./assets/paper.png">`;
-SCISSOR_BUTTON.innerHTML = `<img id="scissor" src="./assets/scissor.png">`;
+ROCK_BUTTON.innerHTML = `<img id="rock" src="./assets/rock.svg">`;
+PAPER_BUTTON.innerHTML = `<img id="paper" src="./assets/paper.svg">`;
+SCISSOR_BUTTON.innerHTML = `<img id="scissor" src="./assets/scissor.svg">`;
 GAME_START.textContent = "Restart!";
 BUTTONS_WRAPPER.classList.add("button-wrapper");
 BUTTONS_WRAPPER.appendChild(ROCK_BUTTON);

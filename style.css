@@ -12,7 +12,14 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: #121212;
+	background: rgb(255, 230, 77);
+	background: linear-gradient(
+		141deg,
+		rgba(255, 230, 77, 1) 0%,
+		rgba(252, 157, 131, 1) 15%,
+		rgba(250, 80, 195, 1) 39%,
+		rgba(105, 40, 221, 1) 100%
+	);
 	color: white; /* just for dev, add color to elements when done */
 }
 
