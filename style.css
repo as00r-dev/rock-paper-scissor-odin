@@ -1,0 +1,101 @@
+*,
+*::after,
+*::before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #121212;
+	color: white; /* just for dev, add color to elements when done */
+}
+
+img {
+	height: 75px;
+	width: 75px;
+}
+
+.wrapper {
+	background: #ffffff22;
+	width: clamp(250px, 500px, 50vw);
+	padding: 5%;
+	border-radius: 6px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.blurred {
+	filter: blur(8px);
+	-webkit-filter: blur(8px);
+}
+
+.wrapper > div {
+	padding: 1.5%;
+}
+
+.score {
+	display: flex;
+	justify-content: space-between;
+}
+
+.button-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 16px;
+}
+
+.button-wrapper > button {
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+.button-wrapper:hover > button {
+	opacity: 0.3;
+}
+
+.button-wrapper:hover > button:hover {
+	opacity: 1;
+	transform: scale(1.1);
+}
+
+.result {
+	text-align: center;
+}
+
+.game-result {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 99;
+	display: none;
+}
+
+.game-result.visible {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	align-items: center;
+	justify-content: center;
+	background: #121212;
+	opacity: 0.7;
+}
+
+.game-result button {
+	border: 0;
+	padding: 12px 16px;
+	border-radius: 8px;
+	opacity: 1;
+	cursor: pointer;
+}
